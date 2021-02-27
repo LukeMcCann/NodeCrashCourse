@@ -31,3 +31,14 @@ Open Node REPL:
 Run Node Script: 
 
 <code>node index</code>
+
+## Modules
+
+While it may appear module exports are run directly, the output module is wrapped in the
+module wrapper function:
+
+<code>
+    (function (exports, require, module, __filename, __dirname)) {
+    
+    })
+</code>
