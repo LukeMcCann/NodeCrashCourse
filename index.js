@@ -1,17 +1,18 @@
+const fs = require('fs');
 const path = require('path');
 
-// Get Base Filename
-console.log('File: ' + path.basename(__filename));
+// Create folder
+fs.mkdir(path.join(__dirname, '/test'), {}, err => {
+    if (err) throw err;
+    console.log('New Folder Created...');
+});
 
-// Directory name
-console.log('Directory: ' + path.dirname(__filename));
-
-// File extension
-console.log('Extension: ' + path.extname(__filename));
-
-// Create path object
-const File = path.parse(__filename);
-console.log(File);
-
-// Concatenate paths
-console.log(path.join(__dirname, 'test', 'test.js'));
+// Create and write to file
+fs.writeFile(
+    path.join(__dirname, '/test', 'module.js'), 
+    'console.log("Hello World!");', 
+    err => {
+        if (err) throw err; 
+        console.log('New File Created...');
+    }
+);
