@@ -27,3 +27,7 @@ Appending <code>-g</code> will install packages globally.
 Open Node REPL:
 
 <code>node</code>
+
+Run Node Script: 
+
+<code>node index</code>
